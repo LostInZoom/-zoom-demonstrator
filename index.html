@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoom zoom zoom zoom </title>
+    <title>Zoom zoom zoom zoom</title>
 
     <link href="./maplibre-gl-js/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="index.css">
@@ -26,18 +26,15 @@
         <hr>
 
         <div id="ui-params" class="ui-section hidden">
-
             <div class="field">
                 <label>sensibilité molette(vitesse de zoom pour coup de molette):</label>
-                <input type="range" id="param-molette" 
-                    min="0.0001" max="0.3" step="0.0001" value="0.0022">
+                <input type="range" id="param-molette" min="0.0001" max="0.3" step="0.0001" value="0.0022">
                 <span id="valeur-molette">0.0022</span> 
             </div>
 
             <div class="field">
                 <label>sensibilité pad(vitesse de zoom pour coup de pad):</label>
-                <input type="range" id="param-pad" 
-                    min="0.0001" max="0.3" step="0.0001" value="0.0022">
+                <input type="range" id="param-pad" min="0.0001" max="0.3" step="0.0001" value="0.0022">
                 <span id="valeur-pad">0.0022</span> 
             </div>
             <button id="btn-activate-params" class="btn-params off">Désactivé</button>
@@ -64,8 +61,6 @@
         </div>
 
         <div id="ui-center" class="ui-section hidden">
-
-
            <p>Verrouillage du zoom au centre:</p>
             <button id="btn-center" class="btn-center off">Désactivé</button>
         </div>
@@ -74,54 +69,47 @@
             <p>Zoom ancre:</p>
             <div class="field">
                 <label>opacité</label>
-                <input type="range" id="param-opacite" 
-                    min="0" max="1" step="0.1" value="0.5">
+                <input type="range" id="param-opacite" min="0" max="1" step="0.1" value="0.5">
                 <span id="valeur-opacite">0.5</span> 
             </div>
             <div class="field">
-            <label>blanc-gris</label>
-                <input type="range" id="param-blanc-gris" 
-                    min="0" max="255" step="1" value="100">
+                <label>blanc-gris</label>
+                <input type="range" id="param-blanc-gris" min="0" max="255" step="1" value="100">
                 <span id="valeur-blanc-gris">100</span> 
             </div>
             <div class="field">
-            <label>temps d'animation (s)</label>
-                <input type="range" id="param-vitesse-animation" 
-                    min="0" max="5" step="0.1" value="3.5">
+                <label>temps d'animation (s)</label>
+                <input type="range" id="param-vitesse-animation" min="0" max="5" step="0.1" value="3.5">
                 <span id="valeur-vitesse-animation">3.5</span> 
             </div>
             <div class="field">
-            <label>illumination ancre</label>
-                <input type="range" id="param-illumination-ancre" 
-                    min="0" max="1" step="0.1" value="0.5">
+                <label>illumination ancre</label>
+                <input type="range" id="param-illumination-ancre" min="0" max="1" step="0.1" value="0.5">
                 <span id="valeur-illumination-ancre">0.5</span> 
             </div>
             <div class="field">
                 <label>zoom par molette</label>
-                <input type="range" id="param-molette-ancre" 
-                    min="0.1" max="5" step="0.5" value="2.5">
+                <input type="range" id="param-molette-ancre" min="0.1" max="5" step="0.5" value="2.5">
                 <span id="valeur-molette-ancre">2.5</span> 
             </div>
             <div class="field radio-group">
                 <label>Apparition progressif du film</label>
-                
                 <div class="radio-option">
                     <input type="radio" id="mode-desactiver" name="ancre-active" value="desactiver" checked>
                     <label for="mode-desactiver">désactiver (Par défaut)</label>
                 </div>
-                
                 <div class="radio-option">
                     <input type="radio" id="mode-activer" name="ancre-active" value="activer">
                     <label for="mode-activer"> activer</label>
                 </div>
             </div>
             <div>                
-                    <label>temps d'animation du film (en %)</label>
-                    <input type="range" id="param-animation-film" 
-                    min="0" max="50" step="1" value="25">
-                    <span id="valeur-animation-film">25</span>
+                <label>temps d'animation du film (en %)</label>
+                <input type="range" id="param-animation-film" min="0" max="50" step="1" value="25">
+                <span id="valeur-animation-film">25</span>
             </div>
-            <div id="choix-types-routes">
+
+            <div id="choix-types-routes" style="margin-top: 15px;">
                 <span class="options-group-title">Affichage des routes</span>
                 
                 <div class="option-row">
@@ -151,95 +139,47 @@
                         <input type="number" id="maxzoom-principale" value="24" min="0" max="24" title="Zoom Max">
                     </div>
                 </div>
-                <!-- <div class="option-row">
-                    <input type="checkbox" id="route-departementale" name="type-route" value="departementale">
-                    <label for="route-departementale" class="option-label">Départementale</label>
-                    <input type="color" id="couleur-departementale" value="#00ff00" title="Couleur de la départementale">
-                </div>
-                
-                <div class="option-row">
-                    <input type="checkbox" id="route-communale" name="type-route" value="communale">
-                    <label for="route-communale" class="option-label">Communale</label>
-                    <input type="color" id="couleur-communale" value="#0000ff" title="Couleur de la communale">
-                </div> -->
-
-                
             </div>
 
-            <!-- <div id="choix-types-toponymes">
-                <span class="options-group-title">Affichage des toponymes</span>
-                
-                <div class="option-row">
-                    <input type="checkbox" id="toponyme-1" name="type-toponyme" value="1">
-                    <label for="toponyme-1" class="option-label">Toponyme importance 1</label>
-                    <input type="color" id="couleur-toponyme-1" value="#ff0000" title="Couleur du toponyme importance 1">
-                </div>
-                <div class="option-row">
-                    <input type="checkbox" id="toponyme-2" name="type-toponyme" value="2">
-                    <label for="toponyme-2" class="option-label">Toponyme importance 2</label>
-                    <input type="color" id="couleur-toponyme-2" value="#00ff00" title="Couleur du toponyme importance 2">
-                </div>
-                <div class="option-row">
-                    <input type="checkbox" id="toponyme-3" name="type-toponyme" value="3">
-                    <label for="toponyme-3" class="option-label">Toponyme importance 3</label>
-                    <input type="color" id="couleur-toponyme-3" value="#0000ff" title="Couleur du toponyme importance 3">
-                </div>
-                <div class="option-row">
-                    <input type="checkbox" id="toponyme-4" name="type-toponyme" value="4">
-                    <label for="toponyme-4" class="option-label">Toponyme importance 4</label>
-                    <input type="color" id="couleur-toponyme-4" value="#ffff00" title="Couleur du toponyme importance 4">
-                </div>
-
-                <div class="option-row">
-                    <input type="checkbox" id="toponyme-5" name="type-toponyme" value="5">
-                    <label for="toponyme-5" class="option-label">Toponyme importance 5 et plus</label>
-                    <input type="color" id="couleur-toponyme-5" value="#ff00ff" title="Couleur du toponyme importance 5">
-                </div>
-
-            
-
-            </div> -->
-            <div id="choix-types-toponymes">
+            <div id="choix-types-toponymes" style="margin-top: 15px;">
                 <span class="options-group-title">Affichage des toponymes</span>
                 
                 <div class="option-row">
                     <input type="checkbox" id="toponyme-toponyme" name="type-toponyme" value="toponyme">
                     <label for="toponyme-toponyme" class="option-label">Toponyme</label>
-                    <input type="color" id="couleur-toponyme" value="#000000" title="Couleur du toponyme importance 1">
+                    <input type="color" id="couleur-toponyme" value="#000000" title="Couleur globale">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-toponyme" value="0" min="0" max="24" title="Zoom Min">
                         <input type="number" id="maxzoom-toponyme" value="24" min="0" max="24" title="Zoom Max">
                     </div>
+                </div>
 
-                    <details class="topo-layers-selector" style="margin-top: 8px; margin-left: 20px;">
+                <details class="topo-layers-selector" style="margin-left: 24px;">
                     <summary style="cursor: pointer; font-size: 0.85rem; color: #555;">⚙️ Choisir les couches de texte...</summary>
                     <div id="topo-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
                         </div>
                 </details>
-                </div>
-
-            
-
             </div>
 
-            <div id="choix-types-hydro">
+            <div id="choix-types-hydro" style="margin-top: 15px;">
                 <span class="options-group-title">Affichage des hydros</span>
                 
                 <div class="option-row">
                     <input type="checkbox" id="hydro-hydro" name="type-hydro" value="hydro">
                     <label for="hydro-hydro" class="option-label">Hydro 1</label>
-                    <input type="color" id="couleur-hydro" value="#0000ff" title="Couleur du hydro ">
+                    <input type="color" id="couleur-hydro" value="#0000ff" title="Couleur de l'eau">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-hydro" value="0" min="0" max="24" title="Zoom Min">
                         <input type="number" id="maxzoom-hydro" value="24" min="0" max="24" title="Zoom Max">
                     </div>
                 </div>
 
-                
+                <details class="hydro-layers-selector" style="margin-left: 24px;">
+                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;">⚙️ Choisir les couches hydro...</summary>
+                    <div id="topo-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
+                    </div>
+                </details>
             </div>
-          
-
-
 
             <button id="btn-ancre" class="btn-ancre off">Désactivé</button>
         </div>
@@ -249,21 +189,17 @@
             <div class="field">
                 <label>Paliers de zoom (ex: 12, 14, 15, 17) :</label>
                 <input type="text" id="param-paliers-zoom" value="8,9,10,12, 14, 15, 17">
-  
             </div>
             <div class="field radio-group">
                 <label>Comportement au bord des paliers :</label>
-                
                 <div class="radio-option">
                     <input type="radio" id="mode-both" name="comportement-palier" value="both" checked>
                     <label for="mode-both">bloquage aux deux bords d'un delta 0.01 (Par défaut)</label>
                 </div>
-                
                 <div class="radio-option">
                     <input type="radio" id="mode-min" name="comportement-palier" value="min">
                     <label for="mode-min">bloquage en dezoomant de 0.01</label>
                 </div>
-                
                 <div class="radio-option">
                     <input type="radio" id="mode-max" name="comportement-palier" value="max">
                     <label for="mode-max">bloquage en zoomant de 0.01</label>
@@ -271,22 +207,18 @@
             </div>
             <button id="btn-sequentiel" class="btn-ancre off">Désactivé</button>
         </div>
+        
         <div class="footer-sidebar">
             <button id="btn-reset" class="btn-reset">Réinitialiser tout</button>
         </div>
     </div>
+
     <div id="zoom-indicator"></div>
     <div id="map">
-        <div id="map1" ></div>
-        
-        <iframe
-            id="map2"
-            src="map_60.html"
-            class="hidden"
-            >
-        </iframe>    
+        <div id="map1"></div>
+        <iframe id="map2" src="map_60.html" class="hidden"></iframe>    
     </div>
+
     <script type="module" src="map.js"></script>
-
-
+</body>
 </html>
