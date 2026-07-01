@@ -1,0 +1,1302 @@
+[
+  {
+    "code_insee": "02691",
+    "name": "Saint-Quentin",
+    "pop": 52958,
+    "type": "commune",
+    "coords": [
+      3.278,
+      49.847
+    ]
+  },
+  {
+    "code_insee": "06004",
+    "name": "Antibes",
+    "pop": 75130,
+    "type": "commune",
+    "coords": [
+      7.106,
+      43.588
+    ]
+  },
+  {
+    "code_insee": "06027",
+    "name": "Cagnes-sur-Mer",
+    "pop": 52580,
+    "type": "commune",
+    "coords": [
+      7.153,
+      43.672
+    ]
+  },
+  {
+    "code_insee": "06029",
+    "name": "Cannes",
+    "pop": 73255,
+    "type": "commune",
+    "coords": [
+      7.004,
+      43.553
+    ]
+  },
+  {
+    "code_insee": "06088",
+    "name": "Nice",
+    "pop": 348085,
+    "type": "commune",
+    "coords": [
+      7.238,
+      43.712
+    ]
+  },
+  {
+    "code_insee": "10387",
+    "name": "Troyes",
+    "pop": 62782,
+    "type": "commune",
+    "coords": [
+      4.078,
+      48.297
+    ]
+  },
+  {
+    "code_insee": "11262",
+    "name": "Narbonne",
+    "pop": 56395,
+    "type": "commune",
+    "coords": [
+      3.02,
+      43.165
+    ]
+  },
+  {
+    "code_insee": "13001",
+    "name": "Aix-en-Provence",
+    "pop": 147478,
+    "type": "commune",
+    "coords": [
+      5.399,
+      43.536
+    ]
+  },
+  {
+    "code_insee": "13004",
+    "name": "Arles",
+    "pop": 50415,
+    "type": "commune",
+    "coords": [
+      4.662,
+      43.547
+    ]
+  },
+  {
+    "code_insee": "13055",
+    "name": "Marseille",
+    "pop": 873076,
+    "type": "commune",
+    "coords": [
+      5.37,
+      43.296
+    ]
+  },
+  {
+    "code_insee": "14118",
+    "name": "Caen",
+    "pop": 108200,
+    "type": "commune",
+    "coords": [
+      -0.37,
+      49.185
+    ]
+  },
+  {
+    "code_insee": "17300",
+    "name": "La Rochelle",
+    "pop": 78535,
+    "type": "commune",
+    "coords": [
+      -1.175,
+      46.162
+    ]
+  },
+  {
+    "code_insee": "18033",
+    "name": "Bourges",
+    "pop": 63702,
+    "type": "commune",
+    "coords": [
+      2.404,
+      47.075
+    ]
+  },
+  {
+    "code_insee": "21231",
+    "name": "Dijon",
+    "pop": 159346,
+    "type": "commune",
+    "coords": [
+      5.038,
+      47.323
+    ]
+  },
+  {
+    "code_insee": "25056",
+    "name": "Besançon",
+    "pop": 119198,
+    "type": "commune",
+    "coords": [
+      6.02,
+      47.255
+    ]
+  },
+  {
+    "code_insee": "26362",
+    "name": "Valence",
+    "pop": 64483,
+    "type": "commune",
+    "coords": [
+      4.914,
+      44.923
+    ]
+  },
+  {
+    "code_insee": "29019",
+    "name": "Brest",
+    "pop": 139619,
+    "type": "commune",
+    "coords": [
+      -4.503,
+      48.4
+    ]
+  },
+  {
+    "code_insee": "29232",
+    "name": "Quimper",
+    "pop": 63642,
+    "type": "commune",
+    "coords": [
+      -4.091,
+      47.997
+    ]
+  },
+  {
+    "code_insee": "2A004",
+    "name": "Ajaccio",
+    "pop": 73822,
+    "type": "commune",
+    "coords": [
+      8.701,
+      41.935
+    ]
+  },
+  {
+    "code_insee": "30189",
+    "name": "Nîmes",
+    "pop": 148104,
+    "type": "commune",
+    "coords": [
+      4.348,
+      43.845
+    ]
+  },
+  {
+    "code_insee": "31555",
+    "name": "Toulouse",
+    "pop": 504078,
+    "type": "commune",
+    "coords": [
+      1.432,
+      43.596
+    ]
+  },
+  {
+    "code_insee": "33063",
+    "name": "Bordeaux",
+    "pop": 261804,
+    "type": "commune",
+    "coords": [
+      -0.574,
+      44.857
+    ]
+  },
+  {
+    "code_insee": "33281",
+    "name": "Mérignac",
+    "pop": 75729,
+    "type": "commune",
+    "coords": [
+      -0.682,
+      44.832
+    ]
+  },
+  {
+    "code_insee": "33318",
+    "name": "Pessac",
+    "pop": 66760,
+    "type": "commune",
+    "coords": [
+      -0.676,
+      44.792
+    ]
+  },
+  {
+    "code_insee": "34032",
+    "name": "Béziers",
+    "pop": 80341,
+    "type": "commune",
+    "coords": [
+      3.231,
+      43.348
+    ]
+  },
+  {
+    "code_insee": "34172",
+    "name": "Montpellier",
+    "pop": 302454,
+    "type": "commune",
+    "coords": [
+      3.868,
+      43.613
+    ]
+  },
+  {
+    "code_insee": "35238",
+    "name": "Rennes",
+    "pop": 225081,
+    "type": "commune",
+    "coords": [
+      -1.682,
+      48.112
+    ]
+  },
+  {
+    "code_insee": "37261",
+    "name": "Tours",
+    "pop": 137658,
+    "type": "commune",
+    "coords": [
+      0.696,
+      47.399
+    ]
+  },
+  {
+    "code_insee": "38185",
+    "name": "Grenoble",
+    "pop": 157477,
+    "type": "commune",
+    "coords": [
+      5.721,
+      45.182
+    ]
+  },
+  {
+    "code_insee": "42218",
+    "name": "Saint-Étienne",
+    "pop": 172718,
+    "type": "commune",
+    "coords": [
+      4.379,
+      45.43
+    ]
+  },
+  {
+    "code_insee": "44109",
+    "name": "Nantes",
+    "pop": 323204,
+    "type": "commune",
+    "coords": [
+      -1.548,
+      47.232
+    ]
+  },
+  {
+    "code_insee": "44184",
+    "name": "Saint-Nazaire",
+    "pop": 72057,
+    "type": "commune",
+    "coords": [
+      -2.254,
+      47.28
+    ]
+  },
+  {
+    "code_insee": "45234",
+    "name": "Orléans",
+    "pop": 116617,
+    "type": "commune",
+    "coords": [
+      1.916,
+      47.883
+    ]
+  },
+  {
+    "code_insee": "49007",
+    "name": "Angers",
+    "pop": 157175,
+    "type": "commune",
+    "coords": [
+      -0.556,
+      47.477
+    ]
+  },
+  {
+    "code_insee": "49099",
+    "name": "Cholet",
+    "pop": 53936,
+    "type": "commune",
+    "coords": [
+      -0.878,
+      47.045
+    ]
+  },
+  {
+    "code_insee": "50129",
+    "name": "Cherbourg-en-Cotentin",
+    "pop": 77808,
+    "type": "commune",
+    "coords": [
+      -1.634,
+      49.633
+    ]
+  },
+  {
+    "code_insee": "51454",
+    "name": "Reims",
+    "pop": 179380,
+    "type": "commune",
+    "coords": [
+      4.04,
+      49.252
+    ]
+  },
+  {
+    "code_insee": "54395",
+    "name": "Nancy",
+    "pop": 104260,
+    "type": "commune",
+    "coords": [
+      6.176,
+      48.69
+    ]
+  },
+  {
+    "code_insee": "56121",
+    "name": "Lorient",
+    "pop": 57846,
+    "type": "commune",
+    "coords": [
+      -3.378,
+      47.75
+    ]
+  },
+  {
+    "code_insee": "56260",
+    "name": "Vannes",
+    "pop": 54420,
+    "type": "commune",
+    "coords": [
+      -2.757,
+      47.66
+    ]
+  },
+  {
+    "code_insee": "57463",
+    "name": "Metz",
+    "pop": 120874,
+    "type": "commune",
+    "coords": [
+      6.196,
+      49.108
+    ]
+  },
+  {
+    "code_insee": "59009",
+    "name": "Villeneuve-d'Ascq",
+    "pop": 62067,
+    "type": "commune",
+    "coords": [
+      3.154,
+      50.632
+    ]
+  },
+  {
+    "code_insee": "59183",
+    "name": "Dunkerque",
+    "pop": 86788,
+    "type": "commune",
+    "coords": [
+      2.338,
+      51.031
+    ]
+  },
+  {
+    "code_insee": "59350",
+    "name": "Lille",
+    "pop": 236710,
+    "type": "commune",
+    "coords": [
+      3.048,
+      50.632
+    ]
+  },
+  {
+    "code_insee": "59512",
+    "name": "Roubaix",
+    "pop": 98892,
+    "type": "commune",
+    "coords": [
+      3.183,
+      50.688
+    ]
+  },
+  {
+    "code_insee": "59599",
+    "name": "Tourcoing",
+    "pop": 99011,
+    "type": "commune",
+    "coords": [
+      3.159,
+      50.725
+    ]
+  },
+  {
+    "code_insee": "60057",
+    "name": "Beauvais",
+    "pop": 56677,
+    "type": "commune",
+    "coords": [
+      2.086,
+      49.437
+    ]
+  },
+  {
+    "code_insee": "62193",
+    "name": "Calais",
+    "pop": 67380,
+    "type": "commune",
+    "coords": [
+      1.876,
+      50.95
+    ]
+  },
+  {
+    "code_insee": "63113",
+    "name": "Clermont-Ferrand",
+    "pop": 147327,
+    "type": "commune",
+    "coords": [
+      3.116,
+      45.786
+    ]
+  },
+  {
+    "code_insee": "64102",
+    "name": "Bayonne",
+    "pop": 52749,
+    "type": "commune",
+    "coords": [
+      -1.466,
+      43.492
+    ]
+  },
+  {
+    "code_insee": "64445",
+    "name": "Pau",
+    "pop": 77066,
+    "type": "commune",
+    "coords": [
+      -0.35,
+      43.32
+    ]
+  },
+  {
+    "code_insee": "66136",
+    "name": "Perpignan",
+    "pop": 119656,
+    "type": "commune",
+    "coords": [
+      2.899,
+      42.697
+    ]
+  },
+  {
+    "code_insee": "67482",
+    "name": "Strasbourg",
+    "pop": 291313,
+    "type": "commune",
+    "coords": [
+      7.768,
+      48.571
+    ]
+  },
+  {
+    "code_insee": "68066",
+    "name": "Colmar",
+    "pop": 67730,
+    "type": "commune",
+    "coords": [
+      7.385,
+      48.11
+    ]
+  },
+  {
+    "code_insee": "68224",
+    "name": "Mulhouse",
+    "pop": 106341,
+    "type": "commune",
+    "coords": [
+      7.326,
+      47.749
+    ]
+  },
+  {
+    "code_insee": "69123",
+    "name": "Lyon",
+    "pop": 522250,
+    "type": "commune",
+    "coords": [
+      4.836,
+      45.764
+    ]
+  },
+  {
+    "code_insee": "69256",
+    "name": "Vaulx-en-Velin",
+    "pop": 52139,
+    "type": "commune",
+    "coords": [
+      4.926,
+      45.786
+    ]
+  },
+  {
+    "code_insee": "69259",
+    "name": "Vénissieux",
+    "pop": 66363,
+    "type": "commune",
+    "coords": [
+      4.881,
+      45.704
+    ]
+  },
+  {
+    "code_insee": "69266",
+    "name": "Villeurbanne",
+    "pop": 156928,
+    "type": "commune",
+    "coords": [
+      4.888,
+      45.771
+    ]
+  },
+  {
+    "code_insee": "72181",
+    "name": "Le Mans",
+    "pop": 145004,
+    "type": "commune",
+    "coords": [
+      0.2,
+      47.988
+    ]
+  },
+  {
+    "code_insee": "73065",
+    "name": "Chambéry",
+    "pop": 59856,
+    "type": "commune",
+    "coords": [
+      5.909,
+      45.583
+    ]
+  },
+  {
+    "code_insee": "74010",
+    "name": "Annecy",
+    "pop": 131715,
+    "type": "commune",
+    "coords": [
+      6.126,
+      45.891
+    ]
+  },
+  {
+    "code_insee": "75056",
+    "name": "Paris",
+    "pop": 2133111,
+    "type": "capitale",
+    "coords": [
+      2.352,
+      48.857
+    ]
+  },
+  {
+    "code_insee": "76351",
+    "name": "Le Havre",
+    "pop": 166058,
+    "type": "commune",
+    "coords": [
+      0.14,
+      49.498
+    ]
+  },
+  {
+    "code_insee": "76540",
+    "name": "Rouen",
+    "pop": 114083,
+    "type": "commune",
+    "coords": [
+      1.093,
+      49.441
+    ]
+  },
+  {
+    "code_insee": "77108",
+    "name": "Chelles",
+    "pop": 54309,
+    "type": "commune",
+    "coords": [
+      2.597,
+      48.884
+    ]
+  },
+  {
+    "code_insee": "77284",
+    "name": "Meaux",
+    "pop": 55616,
+    "type": "commune",
+    "coords": [
+      2.9,
+      48.957
+    ]
+  },
+  {
+    "code_insee": "78586",
+    "name": "Sartrouville",
+    "pop": 51220,
+    "type": "commune",
+    "coords": [
+      2.175,
+      48.94
+    ]
+  },
+  {
+    "code_insee": "78646",
+    "name": "Versailles",
+    "pop": 83587,
+    "type": "commune",
+    "coords": [
+      2.118,
+      48.803
+    ]
+  },
+  {
+    "code_insee": "79191",
+    "name": "Niort",
+    "pop": 59309,
+    "type": "commune",
+    "coords": [
+      -0.465,
+      46.328
+    ]
+  },
+  {
+    "code_insee": "80021",
+    "name": "Amiens",
+    "pop": 133625,
+    "type": "commune",
+    "coords": [
+      2.29,
+      49.901
+    ]
+  },
+  {
+    "code_insee": "82121",
+    "name": "Montauban",
+    "pop": 61919,
+    "type": "commune",
+    "coords": [
+      1.364,
+      44.022
+    ]
+  },
+  {
+    "code_insee": "83061",
+    "name": "Fréjus",
+    "pop": 57082,
+    "type": "commune",
+    "coords": [
+      6.764,
+      43.472
+    ]
+  },
+  {
+    "code_insee": "83069",
+    "name": "Hyères",
+    "pop": 55103,
+    "type": "commune",
+    "coords": [
+      6.189,
+      43.102
+    ]
+  },
+  {
+    "code_insee": "83126",
+    "name": "La Seyne-sur-Mer",
+    "pop": 62763,
+    "type": "commune",
+    "coords": [
+      5.871,
+      43.088
+    ]
+  },
+  {
+    "code_insee": "83137",
+    "name": "Toulon",
+    "pop": 180452,
+    "type": "commune",
+    "coords": [
+      5.932,
+      43.136
+    ]
+  },
+  {
+    "code_insee": "84007",
+    "name": "Avignon",
+    "pop": 90330,
+    "type": "commune",
+    "coords": [
+      4.841,
+      43.935
+    ]
+  },
+  {
+    "code_insee": "85191",
+    "name": "La Roche-sur-Yon",
+    "pop": 54952,
+    "type": "commune",
+    "coords": [
+      -1.408,
+      46.668
+    ]
+  },
+  {
+    "code_insee": "86194",
+    "name": "Poitiers",
+    "pop": 90240,
+    "type": "commune",
+    "coords": [
+      0.36,
+      46.584
+    ]
+  },
+  {
+    "code_insee": "87085",
+    "name": "Limoges",
+    "pop": 129760,
+    "type": "commune",
+    "coords": [
+      1.249,
+      45.854
+    ]
+  },
+  {
+    "code_insee": "91174",
+    "name": "Corbeil-Essonnes",
+    "pop": 52683,
+    "type": "commune",
+    "coords": [
+      2.469,
+      48.604
+    ]
+  },
+  {
+    "code_insee": "91228",
+    "name": "Évry-Courcouronnes",
+    "pop": 66177,
+    "type": "commune",
+    "coords": [
+      2.44,
+      48.63
+    ]
+  },
+  {
+    "code_insee": "91377",
+    "name": "Massy",
+    "pop": 50962,
+    "type": "commune",
+    "coords": [
+      2.275,
+      48.728
+    ]
+  },
+  {
+    "code_insee": "92002",
+    "name": "Antony",
+    "pop": 63232,
+    "type": "commune",
+    "coords": [
+      2.299,
+      48.75
+    ]
+  },
+  {
+    "code_insee": "92004",
+    "name": "Asnières-sur-Seine",
+    "pop": 89662,
+    "type": "commune",
+    "coords": [
+      2.288,
+      48.915
+    ]
+  },
+  {
+    "code_insee": "92012",
+    "name": "Boulogne-Billancourt",
+    "pop": 119808,
+    "type": "commune",
+    "coords": [
+      2.239,
+      48.837
+    ]
+  },
+  {
+    "code_insee": "92023",
+    "name": "Clamart",
+    "pop": 54491,
+    "type": "commune",
+    "coords": [
+      2.255,
+      48.796
+    ]
+  },
+  {
+    "code_insee": "92024",
+    "name": "Clichy",
+    "pop": 64849,
+    "type": "commune",
+    "coords": [
+      2.306,
+      48.904
+    ]
+  },
+  {
+    "code_insee": "92025",
+    "name": "Colombes",
+    "pop": 88870,
+    "type": "commune",
+    "coords": [
+      2.247,
+      48.922
+    ]
+  },
+  {
+    "code_insee": "92026",
+    "name": "Courbevoie",
+    "pop": 81516,
+    "type": "commune",
+    "coords": [
+      2.256,
+      48.898
+    ]
+  },
+  {
+    "code_insee": "92040",
+    "name": "Issy-les-Moulineaux",
+    "pop": 68580,
+    "type": "commune",
+    "coords": [
+      2.264,
+      48.824
+    ]
+  },
+  {
+    "code_insee": "92044",
+    "name": "Levallois-Perret",
+    "pop": 68009,
+    "type": "commune",
+    "coords": [
+      2.287,
+      48.895
+    ]
+  },
+  {
+    "code_insee": "92050",
+    "name": "Nanterre",
+    "pop": 97351,
+    "type": "commune",
+    "coords": [
+      2.207,
+      48.896
+    ]
+  },
+  {
+    "code_insee": "92051",
+    "name": "Neuilly-sur-Seine",
+    "pop": 59267,
+    "type": "commune",
+    "coords": [
+      2.266,
+      48.885
+    ]
+  },
+  {
+    "code_insee": "92063",
+    "name": "Rueil-Malmaison",
+    "pop": 78186,
+    "type": "commune",
+    "coords": [
+      2.177,
+      48.869
+    ]
+  },
+  {
+    "code_insee": "93001",
+    "name": "Aubervilliers",
+    "pop": 90071,
+    "type": "commune",
+    "coords": [
+      2.384,
+      48.912
+    ]
+  },
+  {
+    "code_insee": "93005",
+    "name": "Aulnay-sous-Bois",
+    "pop": 86135,
+    "type": "commune",
+    "coords": [
+      2.493,
+      48.946
+    ]
+  },
+  {
+    "code_insee": "93007",
+    "name": "Le Blanc-Mesnil",
+    "pop": 58257,
+    "type": "commune",
+    "coords": [
+      2.461,
+      48.94
+    ]
+  },
+  {
+    "code_insee": "93008",
+    "name": "Bobigny",
+    "pop": 55056,
+    "type": "commune",
+    "coords": [
+      2.439,
+      48.908
+    ]
+  },
+  {
+    "code_insee": "93010",
+    "name": "Bondy",
+    "pop": 52905,
+    "type": "commune",
+    "coords": [
+      2.484,
+      48.902
+    ]
+  },
+  {
+    "code_insee": "93029",
+    "name": "Drancy",
+    "pop": 71363,
+    "type": "commune",
+    "coords": [
+      2.445,
+      48.923
+    ]
+  },
+  {
+    "code_insee": "93031",
+    "name": "Épinay-sur-Seine",
+    "pop": 53489,
+    "type": "commune",
+    "coords": [
+      2.314,
+      48.955
+    ]
+  },
+  {
+    "code_insee": "93048",
+    "name": "Montreuil",
+    "pop": 111455,
+    "type": "commune",
+    "coords": [
+      2.448,
+      48.863
+    ]
+  },
+  {
+    "code_insee": "93051",
+    "name": "Noisy-le-Grand",
+    "pop": 70374,
+    "type": "commune",
+    "coords": [
+      2.564,
+      48.836
+    ]
+  },
+  {
+    "code_insee": "93055",
+    "name": "Pantin",
+    "pop": 60800,
+    "type": "commune",
+    "coords": [
+      2.409,
+      48.898
+    ]
+  },
+  {
+    "code_insee": "93066",
+    "name": "Saint-Denis",
+    "pop": 113942,
+    "type": "commune",
+    "coords": [
+      2.359,
+      48.93
+    ]
+  },
+  {
+    "code_insee": "93070",
+    "name": "Saint-Ouen-sur-Seine",
+    "pop": 53207,
+    "type": "commune",
+    "coords": [
+      2.333,
+      48.91
+    ]
+  },
+  {
+    "code_insee": "93071",
+    "name": "Sevran",
+    "pop": 51845,
+    "type": "commune",
+    "coords": [
+      2.531,
+      48.939
+    ]
+  },
+  {
+    "code_insee": "94017",
+    "name": "Champigny-sur-Marne",
+    "pop": 77724,
+    "type": "commune",
+    "coords": [
+      2.517,
+      48.817
+    ]
+  },
+  {
+    "code_insee": "94028",
+    "name": "Créteil",
+    "pop": 92989,
+    "type": "commune",
+    "coords": [
+      2.455,
+      48.784
+    ]
+  },
+  {
+    "code_insee": "94033",
+    "name": "Fontenay-sous-Bois",
+    "pop": 51812,
+    "type": "commune",
+    "coords": [
+      2.474,
+      48.851
+    ]
+  },
+  {
+    "code_insee": "94041",
+    "name": "Ivry-sur-Seine",
+    "pop": 64001,
+    "type": "commune",
+    "coords": [
+      2.388,
+      48.813
+    ]
+  },
+  {
+    "code_insee": "94046",
+    "name": "Maisons-Alfort",
+    "pop": 58068,
+    "type": "commune",
+    "coords": [
+      2.438,
+      48.806
+    ]
+  },
+  {
+    "code_insee": "94068",
+    "name": "Saint-Maur-des-Fossés",
+    "pop": 75441,
+    "type": "commune",
+    "coords": [
+      2.494,
+      48.799
+    ]
+  },
+  {
+    "code_insee": "94076",
+    "name": "Villejuif",
+    "pop": 57753,
+    "type": "commune",
+    "coords": [
+      2.36,
+      48.793
+    ]
+  },
+  {
+    "code_insee": "94081",
+    "name": "Vitry-sur-Seine",
+    "pop": 96205,
+    "type": "commune",
+    "coords": [
+      2.394,
+      48.788
+    ]
+  },
+  {
+    "code_insee": "95018",
+    "name": "Argenteuil",
+    "pop": 107221,
+    "type": "commune",
+    "coords": [
+      2.241,
+      48.951
+    ]
+  },
+  {
+    "code_insee": "95127",
+    "name": "Cergy",
+    "pop": 68348,
+    "type": "commune",
+    "coords": [
+      2.051,
+      49.04
+    ]
+  },
+  {
+    "code_insee": "95585",
+    "name": "Sarcelles",
+    "pop": 58424,
+    "type": "commune",
+    "coords": [
+      2.382,
+      48.99
+    ]
+  },
+  {
+    "code_insee": "97101",
+    "name": "Les Abymes",
+    "pop": 52118,
+    "type": "commune",
+    "coords": [
+      -61.502,
+      16.273
+    ]
+  },
+  {
+    "code_insee": "97209",
+    "name": "Fort-de-France",
+    "pop": 74921,
+    "type": "commune",
+    "coords": [
+      -61.069,
+      14.641
+    ]
+  },
+  {
+    "code_insee": "97302",
+    "name": "Cayenne",
+    "pop": 63468,
+    "type": "commune",
+    "coords": [
+      -52.501,
+      5.022
+    ]
+  },
+  {
+    "code_insee": "97311",
+    "name": "Saint-Laurent-du-Maroni",
+    "pop": 50250,
+    "type": "commune",
+    "coords": [
+      -53.983,
+      4.965
+    ]
+  },
+  {
+    "code_insee": "97409",
+    "name": "Saint-André",
+    "pop": 57150,
+    "type": "commune",
+    "coords": [
+      55.643,
+      -20.963
+    ]
+  },
+  {
+    "code_insee": "97411",
+    "name": "Saint-Denis",
+    "pop": 154765,
+    "type": "commune",
+    "coords": [
+      55.447,
+      -20.933
+    ]
+  },
+  {
+    "code_insee": "97414",
+    "name": "Saint-Louis",
+    "pop": 53935,
+    "type": "commune",
+    "coords": [
+      55.421,
+      -21.234
+    ]
+  },
+  {
+    "code_insee": "97415",
+    "name": "Saint-Paul",
+    "pop": 105240,
+    "type": "commune",
+    "coords": [
+      55.322,
+      -21.044
+    ]
+  },
+  {
+    "code_insee": "97416",
+    "name": "Saint-Pierre",
+    "pop": 84077,
+    "type": "commune",
+    "coords": [
+      55.494,
+      -21.312
+    ]
+  },
+  {
+    "code_insee": "97422",
+    "name": "Le Tampon",
+    "pop": 81943,
+    "type": "commune",
+    "coords": [
+      55.558,
+      -21.223
+    ]
+  },
+  {
+    "code_insee": "97611",
+    "name": "Mamoudzou",
+    "pop": 71437,
+    "type": "commune",
+    "coords": [
+      45.193,
+      -12.79
+    ]
+  }
+]

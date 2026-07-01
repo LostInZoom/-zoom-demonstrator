@@ -11,110 +11,114 @@
 <body>
 
     <div id="sidebar">
-        <h2>Configuration du zoom</h2>
+        <div class="lang-switch-container">
+            <button id="btn-lang" class="btn-lang">🇬🇧 EN</button>
+        </div>
+
+        <h2 data-fr="Configuration du zoom" data-en="Zoom Configuration">Configuration du zoom</h2>
         
-        <label for="menu-select">Choisir un mode de zoom :</label>
+        <label for="menu-select" data-fr="Choisir un mode de zoom :" data-en="Choose a zoom mode:">Choisir un mode de zoom :</label>
         <select id="menu-select">
-            <option value="none">-- Choisir --</option>
-            <option value="mode-params">Zoom paramétrage</option>
-            <option value="mode-gravite">zoom gravitationnaire</option>
-            <option value="mode-center">Verrouillage du zoom au centre</option>
-            <option value="mode-ancre">Zoom ancre</option>
-            <option value="mode-sequentiel">Zoom séquentiel</option>
+            <option value="none" data-fr="-- Choisir --" data-en="-- Choose --">-- Choisir --</option>
+            <option value="mode-params" data-fr="Zoom paramétrage" data-en="Settings Zoom">Zoom paramétrage</option>
+            <option value="mode-gravite" data-fr="Zoom gravitationnaire" data-en="Gravity Zoom">zoom gravitationnaire</option>
+            <option value="mode-center" data-fr="Verrouillage du zoom au centre" data-en="Center Lock Zoom">Verrouillage du zoom au centre</option>
+            <option value="mode-ancre" data-fr="Zoom ancre" data-en="Anchor Zoom">Zoom ancre</option>
+            <option value="mode-sequentiel" data-fr="Zoom séquentiel" data-en="Sequential Zoom">Zoom séquentiel</option>
         </select>
 
         <hr>
 
         <div id="ui-params" class="ui-section hidden">
             <div class="field">
-                <label>sensibilité molette(vitesse de zoom pour coup de molette):</label>
+                <label data-fr="sensibilité molette(vitesse de zoom pour coup de molette):" data-en="wheel sensitivity (zoom speed per wheel click):">sensibilité molette(vitesse de zoom pour coup de molette):</label>
                 <input type="range" id="param-molette" min="0.0001" max="0.3" step="0.0001" value="0.0022">
                 <span id="valeur-molette">0.0022</span> 
             </div>
 
             <div class="field">
-                <label>sensibilité pad(vitesse de zoom pour coup de pad):</label>
+                <label data-fr="sensibilité pad(vitesse de zoom pour coup de pad):" data-en="trackpad sensitivity (zoom speed per pad gesture):">sensibilité pad(vitesse de zoom pour coup de pad):</label>
                 <input type="range" id="param-pad" min="0.0001" max="0.3" step="0.0001" value="0.0022">
                 <span id="valeur-pad">0.0022</span> 
             </div>
-            <button id="btn-activate-params" class="btn-params off">Désactivé</button>
+            <button id="btn-activate-params" class="btn-params off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
         </div>
 
         <div id="ui-gravite" class="ui-section hidden">
             <div class="field">
-                <label>Force de la gravité:</label>
+                <label data-fr="Force de la gravité:" data-en="Gravity Force:">Force de la gravité:</label>
                 <input type="number" id="param-force" value="0.15" min="0" max="1">
-                <label>seuil population ville</label>
+                
+                <label data-fr="seuil population ville" data-en="city population threshold">seuil population ville</label>
                 <input type="number" id="param-population" value="0" min="0">
-                <label>poids des capitales</label>
+                
+                <label data-fr="poids des capitales" data-en="capitals weight">poids des capitales</label>
                 <input type="number" id="param-poids-capitales" value="1.5" min="0" step="0.1">
-                <label>poids des communes</label>
+                
+                <label data-fr="poids des communes" data-en="municipalities weight">poids des communes</label>
                 <input type="number" id="param-poids-communes" value="1" min="0" step="0.1">
-                <label>Seuil de déclenchement de la gravité (pour v2)</label>
+                
+                <label data-fr="Seuil de déclenchement de la gravité (pour v2)" data-en="Gravity activation threshold (for v2)">Seuil de déclenchement de la gravité (pour v2)</label>
                 <input type="number" id="param-delta-threshold" value="150" min="0" max="500" step="50">
             </div>
 
-            <p>Zoom gravitationnel v1:</p>
-            <button id="btn-gravite2" class="btn-gravite off">Désactivé</button>
-            <p>Zoom gravitationnel v2:</p>
-            <button id="btn-gravite3" class="btn-gravite off">Désactivé</button>
+            <p data-fr="Zoom gravitationnel v1:" data-en="Gravity zoom v1:">Zoom gravitationnel v1:</p>
+            <button id="btn-gravite2" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <p data-fr="Zoom gravitationnel v2:" data-en="Gravity zoom v2:">Zoom gravitationnel v2:</p>
+            <button id="btn-gravite3" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
         </div>
 
         <div id="ui-center" class="ui-section hidden">
-           <p>Verrouillage du zoom au centre:</p>
-            <button id="btn-center" class="btn-center off">Désactivé</button>
+           <p data-fr="Verrouillage du zoom au centre:" data-en="Center lock zoom:">Verrouillage du zoom au centre:</p>
+            <button id="btn-center" class="btn-center off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
         </div>
 
         <div id="ui-ancre" class="ui-section hidden">
-            <p>Zoom ancre:</p>
+            <p data-fr="Zoom ancre:" data-en="Anchor Zoom:">Zoom ancre:</p>
             <div class="field">
-                <label>opacité</label>
+                <label data-fr="opacité" data-en="opacity">opacité</label>
                 <input type="range" id="param-opacite" min="0" max="1" step="0.1" value="0.5">
                 <span id="valeur-opacite">0.5</span> 
             </div>
             <div class="field">
-                <label>blanc-gris</label>
+                <label data-fr="blanc-gris" data-en="white-gray">blanc-gris</label>
                 <input type="range" id="param-blanc-gris" min="0" max="255" step="1" value="100">
                 <span id="valeur-blanc-gris">100</span> 
             </div>
             <div class="field">
-                <label>temps d'animation (s)</label>
+                <label data-fr="temps d'animation (s)" data-en="animation time (s)">temps d'animation (s)</label>
                 <input type="range" id="param-vitesse-animation" min="0" max="5" step="0.1" value="3.5">
                 <span id="valeur-vitesse-animation">3.5</span> 
             </div>
+
             <div class="field">
-                <label>illumination ancre</label>
-                <input type="range" id="param-illumination-ancre" min="0" max="1" step="0.1" value="0.5">
-                <span id="valeur-illumination-ancre">0.5</span> 
-            </div>
-            <div class="field">
-                <label>zoom par molette</label>
+                <label data-fr="zoom par molette" data-en="zoom by mousewheel">zoom par molette</label>
                 <input type="range" id="param-molette-ancre" min="0.1" max="5" step="0.5" value="2.5">
                 <span id="valeur-molette-ancre">2.5</span> 
             </div>
             <div class="field radio-group">
-                <label>Apparition progressif du film</label>
+                <label data-fr="Apparition progressif du film" data-en="Progressive overlay appearance">Apparition progressif du film</label>
                 <div class="radio-option">
                     <input type="radio" id="mode-desactiver" name="ancre-active" value="desactiver" checked>
-                    <label for="mode-desactiver">désactiver (Par défaut)</label>
+                    <label for="mode-desactiver" data-fr="désactiver (Par défaut)" data-en="disable (Default)">désactiver (Par défaut)</label>
                 </div>
                 <div class="radio-option">
                     <input type="radio" id="mode-activer" name="ancre-active" value="activer">
-                    <label for="mode-activer"> activer</label>
+                    <label for="mode-activer" data-fr="activer" data-en="enable"> activer</label>
                 </div>
             </div>
             <div>                
-                <label>temps d'animation du film (en %)</label>
+                <label data-fr="temps d'animation du film (en %)" data-en="overlay animation time (in %)">temps d'animation du film (en %)</label>
                 <input type="range" id="param-animation-film" min="0" max="50" step="1" value="25">
                 <span id="valeur-animation-film">25</span>
             </div>
 
             <div id="choix-types-routes" style="margin-top: 15px;">
-                <span class="options-group-title">Affichage des routes</span>
+                <span class="options-group-title" data-fr="Affichage des routes" data-en="Roads Display">Affichage des routes</span>
                 
                 <div class="option-row">
                     <input type="checkbox" id="route-autoroute" name="type-route" value="autoroute">
-                    <label for="route-autoroute" class="option-label">Autoroute</label>
+                    <label for="route-autoroute" class="option-label" data-fr="Autoroute" data-en="Highway">Autoroute</label>
                     <input type="color" id="couleur-autoroute" value="#ff0000" title="Couleur de l'autoroute">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-autoroute" value="0" min="0" max="24" title="Zoom Min">
@@ -123,7 +127,7 @@
                 </div>
                 <div class="option-row">
                     <input type="checkbox" id="route-regionale" name="type-route" value="regionale">
-                    <label for="route-regionale" class="option-label">Régionale</label>
+                    <label for="route-regionale" class="option-label" data-fr="Régionale" data-en="Regional">Régionale</label>
                     <input type="color" id="couleur-regionale" value="#ff0000" title="Couleur de la régionale">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-regionale" value="10" min="0" max="24" title="Zoom Min">
@@ -132,7 +136,7 @@
                 </div>
                 <div class="option-row">
                     <input type="checkbox" id="route-principale" name="type-route" value="principale">
-                    <label for="route-principale" class="option-label">Principale</label>
+                    <label for="route-principale" class="option-label" data-fr="Principale" data-en="Main Road">Principale</label>
                     <input type="color" id="couleur-principale" value="#ff0000" title="Couleur de la principale">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-principale" value="10" min="0" max="24" title="Zoom Min">
@@ -142,12 +146,12 @@
             </div>
 
             <div id="choix-types-toponymes" style="margin-top: 15px;">
-                <span class="options-group-title">Affichage des toponymes</span>
+                <span class="options-group-title" data-fr="Affichage des toponymes" data-en="Place Names Display">Affichage des toponymes</span>
                 
                 <div class="option-row">
                     <input type="checkbox" id="toponyme-toponyme" name="type-toponyme" value="toponyme">
-                    <label for="toponyme-toponyme" class="option-label">Toponyme</label>
-                    <input type="color" id="couleur-toponyme" value="#000000" title="Couleur globale">
+                    <label for="toponyme-toponyme" class="option-label" data-fr="Toponyme" data-en="Place Name">Toponyme</label>
+                    <input type="color" id="couleur-toponyme" value="#000000" title="Couleur du toponyme">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-toponyme" value="0" min="0" max="24" title="Zoom Min">
                         <input type="number" id="maxzoom-toponyme" value="24" min="0" max="24" title="Zoom Max">
@@ -155,61 +159,74 @@
                 </div>
 
                 <details class="topo-layers-selector" style="margin-left: 24px;">
-                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;">⚙️ Choisir les couches de texte...</summary>
+                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;" data-fr="⚙️ Choisir les couches de texte..." data-en="⚙️ Choose text layers...">⚙️ Choisir les couches de texte...</summary>
                     <div id="topo-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
-                        </div>
+                    </div>
                 </details>
             </div>
 
             <div id="choix-types-hydro" style="margin-top: 15px;">
-                <span class="options-group-title">Affichage des hydros</span>
+                <span class="options-group-title" data-fr="Affichage des hydros" data-en="Waterways Display">Affichage des hydros</span>
                 
                 <div class="option-row">
-                    <input type="checkbox" id="hydro-hydro" name="type-hydro" value="hydro">
-                    <label for="hydro-hydro" class="option-label">Hydro 1</label>
-                    <input type="color" id="couleur-hydro" value="#0000ff" title="Couleur de l'eau">
+                    <input type="checkbox" id="hydro-hydro" name="type-hydro" value="hydro-hydro">
+                    <label for="hydro-hydro" class="option-label" data-fr="Hydro " data-en="">Hydro </label>
+                    <input type="color" id="couleur-hydro" value="#0000ff" title="Couleur Hydro">
                     <div class="zoom-range-selectors">
                         <input type="number" id="minzoom-hydro" value="0" min="0" max="24" title="Zoom Min">
                         <input type="number" id="maxzoom-hydro" value="24" min="0" max="24" title="Zoom Max">
                     </div>
                 </div>
-
-                <details class="hydro-layers-selector" style="margin-left: 24px;">
-                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;">⚙️ Choisir les couches hydro...</summary>
-                    <div id="topo-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
-                    </div>
+                <details class="hydro-layers-selector" style="margin-left: 24px; margin-bottom: 12px;">
+                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;" data-fr="⚙️ Choisir les couches Hydro ..." data-en="⚙️ Choose waterway layers...">⚙️ Choisir les couches Hydro ...</summary>
+                    <div id="hydro-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
+                        </div>
                 </details>
-            </div>
 
-            <button id="btn-ancre" class="btn-ancre off">Désactivé</button>
+                <!-- <div class="option-row">
+                    <input type="checkbox" id="hydro-ign" name="type-hydro" value="hydro-ign">
+                    <label for="hydro-ign" class="option-label" data-fr="Hydro IGN (Toponymes)" data-en="Waterway IGN (Names)">Hydro IGN</label>
+                    <input type="color" id="couleur-hydroign" value="#0000ff" title="Couleur Hydro IGN">
+                    <div class="zoom-range-selectors">
+                        <input type="number" id="minzoom-hydroign" value="0" min="0" max="24" title="Zoom Min">
+                        <input type="number" id="maxzoom-hydroign" value="24" min="0" max="24" title="Zoom Max">
+                    </div>
+                </div>
+                <details class="hydro-layers-selector" style="margin-left: 24px;">
+                    <summary style="cursor: pointer; font-size: 0.85rem; color: #555;" data-fr="⚙️ Choisir les couches Hydro ire..." data-en="⚙️ Choose  waterway layers...">⚙️ Choisir les couches Hydro IGN...</summary>
+                    <div id="hydro-ign-layers-list" style="max-height: 200px; overflow-y: auto; padding: 5px; border: 1px solid #ddd; margin-top: 5px; background: #fafafa;">
+                        </div>
+                </details> -->
+            </div>
+            <button id="btn-ancre" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
         </div>
 
         <div id="ui-sequentiel" class="ui-section hidden">
-            <p>Zoom sequentiel:</p>
+            <p data-fr="Zoom sequentiel:" data-en="Sequential Zoom:">Zoom sequentiel:</p>
             <div class="field">
-                <label>Paliers de zoom (ex: 12, 14, 15, 17) :</label>
+                <label data-fr="Paliers de zoom (ex: 12, 14, 15, 17) :" data-en="Zoom levels (e.g., 12, 14, 15, 17) :">Paliers de zoom (ex: 12, 14, 15, 17) :</label>
                 <input type="text" id="param-paliers-zoom" value="8,9,10,12, 14, 15, 17">
             </div>
             <div class="field radio-group">
-                <label>Comportement au bord des paliers :</label>
+                <label data-fr="Comportement au bord des paliers :" data-en="Behavior at level steps:">Comportement au bord des paliers :</label>
                 <div class="radio-option">
                     <input type="radio" id="mode-both" name="comportement-palier" value="both" checked>
-                    <label for="mode-both">bloquage aux deux bords d'un delta 0.01 (Par défaut)</label>
+                    <label for="mode-both" data-fr="bloquage aux deux bords d'un delta 0.01 (Par défaut)" data-en="lock on both edges within a 0.01 delta (Default)">bloquage aux deux bords d'un delta 0.01 (Par défaut)</label>
                 </div>
                 <div class="radio-option">
                     <input type="radio" id="mode-min" name="comportement-palier" value="min">
-                    <label for="mode-min">bloquage en dezoomant de 0.01</label>
+                    <label for="mode-min" data-fr="bloquage en dezoomant de 0.01" data-en="lock when zooming out by 0.01">bloquage en dezoomant de 0.01</label>
                 </div>
                 <div class="radio-option">
                     <input type="radio" id="mode-max" name="comportement-palier" value="max">
-                    <label for="mode-max">bloquage en zoomant de 0.01</label>
+                    <label for="mode-max" data-fr="bloquage en zoomant de 0.01" data-en="lock when zooming in by 0.01">bloquage en zoomant de 0.01</label>
                 </div>
             </div>
-            <button id="btn-sequentiel" class="btn-ancre off">Désactivé</button>
+            <button id="btn-sequentiel" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
         </div>
-        
+
         <div class="footer-sidebar">
-            <button id="btn-reset" class="btn-reset">Réinitialiser tout</button>
+            <button id="btn-reset" class="btn-reset" data-fr="Réinitialiser tout" data-en="Reset All">Réinitialiser tout</button>
         </div>
     </div>
 
@@ -219,6 +236,7 @@
         <iframe id="map2" src="map_60.html" class="hidden"></iframe>    
     </div>
 
+    <script type="module" src="lang.js"></script>
     <script type="module" src="map.js"></script>
 </body>
 </html>
