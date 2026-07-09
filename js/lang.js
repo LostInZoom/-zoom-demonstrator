@@ -1,3 +1,5 @@
+
+
 let langueActuelle = 'fr';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             btnLang.textContent = langueActuelle === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR';
             
-            const elementsATraduire = document.querySelectorAll('[data-fr]');
+            document.body.className = `lang-${langueActuelle}`;
             
+            const elementsATraduire = document.querySelectorAll('[data-fr]');
             elementsATraduire.forEach(el => {
-                const texteTraduit = el.getAttribute(`data-${langueActuelle}`);
-                if (texteTraduit) {
-                    el.textContent = texteTraduit;
+
+                if (!el.classList.contains('tooltip-help')) {
+                    const texteTraduit = el.getAttribute(`data-${langueActuelle}`);
+                    if (texteTraduit) {
+                        el.textContent = texteTraduit;
+                    }
                 }
             });
         });

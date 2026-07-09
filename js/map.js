@@ -1,48 +1,4 @@
-import * as maplibregl from './maplibre-gl-js/dist/maplibre-gl.mjs';
-
-// const map = new maplibregl.Map({
-//     container: 'map',
-//         style: {
-//         version: 8,
-//         sources: {
-//             cartodb_voyager: {
-//                 type: "raster",
-//                 tiles: [
-//                     "https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{scale}.png"
-//                 ],
-//                 tileSize: 256,
-//                 attribution:
-//                     '© <a href="https://carto.com/attributions">CARTO</a>'
-//             }
-//         },
-//         layers: [
-//             {
-//                 id: "cartodb_voyager",
-//                 type: "raster",
-//                 source: "cartodb_voyager",
-//                 minzoom: 0,
-//                 maxzoom: 20
-//             },
-//             {
-//                 id: "film_ancre",
-//                 type: "background",
-//                 layout: {
-//                     'visibility': 'none'
-//                 },
-//                 paint: {
-//                     "background-color": "#ffffff",
-//                     'background-opacity': 0.5,
-                    
-//                 }
-//             }
-//         ]
-        
-//     },
-//     center: [2.3522, 48.8566], 
-//     zoom: 6
-
-    
-// });
+import * as maplibregl from '../maplibre_v6/dist/maplibre-gl.mjs';
 
 
 
@@ -149,11 +105,20 @@ menuSelect.addEventListener('change', (e) => {
         console.log('seq');
         divMap1.classList.add('hidden');
         divMap2.classList.remove('hidden');
+        setTimeout(() => {
+            const iframe = divMap2; 
+           
+
+            if (iframe && iframe.contentWindow && iframe.contentWindow.map) {
+                iframe.contentWindow.mapV55.resize();
+            }
+        }, 50);
 
     } else {
         
         divMap2.classList.add('hidden');
         divMap1.classList.remove('hidden');
+
         
 
     }
@@ -222,16 +187,24 @@ inputAnimationFilm.addEventListener('input', (e) => {
 });
 let cities = [];
 
-fetch('/assets/villes.json')
-  .then(response => response.json())
+
+
+fetch('https://lostinzoom.huma-num.fr/vtiles/style/villes.json')
+  .then(response => {
+    if (!response.ok) {
+        throw new Error("Erreur réseau lors de la récupération des villes");
+    }
+    return response.json();
+  })
   .then(data => {
     cities = data;
-    console.log("Donnéesok ");
+    console.log("Données ok!  r");
     window.cities = cities;
-
+    
+  })
+  .catch(error => {
+    console.error( error);
   });
-
-
 
 // ############################################################  GRAVITE 
 
@@ -547,175 +520,4 @@ function reset(){
     
 
 }
-
-
-
-//############################################################  ancre
-
-
-
-// let opaciteAncre;
-// let blancGris;
-// let vitesseAnimation;
-// let illuminationAncre;
-// let moletteAncre;
-// let couchesRoutes;
-// let animationFilmTemps;
-// let animationEnCours = false;
-// let ancre = false;
-// let ancreProgress;
-// let progressionTemps = 0;
-
-// function showAncre(on = true) {
-
-//     if (ancreProgress == "desactiver" ){
-//         if(on){
-//             map.setPaintProperty('film_ancre', 'background-opacity', opaciteAncre);
-
-//             map.setLayoutProperty("film_ancre", "visibility", "visible");
-//             couchesRoutes.forEach(route => {
-//                 if (map.getLayer(route.id)) {
-
-//                     map.moveLayer(route.id); 
-                    
-//                     map.setPaintProperty(route.id, 'line-color', '#ff0000'); 
-//                 }
-//             });
-//         }else{
-//             map.setLayoutProperty("film_ancre", "visibility", "none");
-//             couchesRoutes.forEach(route => {
-//                 if (map.getLayer(route.id)) {
-//                     map.setPaintProperty(route.id, 'line-color', route.couleurOrigine); 
-//                 if (route.idsup && map.getLayer(route.idsup)) {
-//                         map.moveLayer(route.id, route.idsup);
-//                     } else {
-//                         // Si elle n'avait rien au-dessus d'elle au départ, on la remet tout en haut
-//                         map.moveLayer(route.id); 
-//                     }
-//                 }
-//             });
-//         }
-//     }else{
-//         if(on){
-//             map.setLayoutProperty("film_ancre", "visibility", "visible");
-//             //mettre ici ce qui permet l'oppacité dynamique
-//             const limiteMontage = Math.min(0.5, animationFilmTemps / 100);
-//             let opaciteDynamique = 0;
-//             // premier partie opacité augment, puis stagne et diminue
-//             if (progressionTemps <= limiteMontage) {
-//                 opaciteDynamique = (progressionTemps / limiteMontage) * opaciteAncre;
-//             } else if (progressionTemps >= (1 - limiteMontage)) {
-//                 let distanceFin = (1 - progressionTemps) / limiteMontage;
-//                 opaciteDynamique = distanceFin * opaciteAncre;
-//             } else {
-//                 opaciteDynamique = opaciteAncre;
-//             }
-//             opaciteDynamique = Math.max(0, Math.min(opaciteAncre, opaciteDynamique));
-//             map.setPaintProperty('film_ancre', 'background-opacity', opaciteDynamique);
-
-
-//             couchesRoutes.forEach(route => {
-//                 if (map.getLayer(route.id)) {
-
-//                     map.moveLayer(route.id); 
-                    
-//                     map.setPaintProperty(route.id, 'line-color', '#ff0000'); 
-//                 }
-//             });
-//         }else{
-//             map.setLayoutProperty("film_ancre", "visibility", "none");
-//             map.setPaintProperty('film_ancre', 'background-opacity', 0);
-//             progressionTemps = 0;
-//             couchesRoutes.forEach(route => {
-//                 if (map.getLayer(route.id)) {
-//                     map.setPaintProperty(route.id, 'line-color', route.couleurOrigine); 
-//                 if (route.idsup && map.getLayer(route.idsup)) {
-//                         map.moveLayer(route.id, route.idsup);
-//                     } else {
-//                         map.moveLayer(route.id); 
-//                     }
-//                 }
-//             });
-//         }
-
-//     }
-
-// }
-
-// btnAncre.addEventListener('click', () => {
-//     ancre = !ancre;
-//     ancreProgress =  document.querySelector('input[name="ancre-active"]:checked').value;
-
-//     if (ancre) {
-//         btnAncre.textContent = 'Activé';
-//         btnAncre.classList.replace('off', 'on');
-//         opaciteAncre = parseFloat(inputOpacite.value);
-//         blancGris = parseFloat(inputBlancGris.value);
-//         vitesseAnimation = parseFloat(inputVitesseAnimation.value);
-//         illuminationAncre = parseFloat(inputIlluminationAncre.value);
-//         moletteAncre = parseFloat(inputMoletteAncre.value);
-//         animationFilmTemps = parseFloat(inputAnimationFilm.value);
-//         map.setPaintProperty('film_ancre', 'background-color', `rgb(${blancGris}, ${blancGris}, ${blancGris})`);
-//         map.scrollZoom.disable();
-
-
-//     } else {
-//         btnAncre.textContent = 'Désactivé';
-//         btnAncre.classList.replace('on', 'off');
-//         map.scrollZoom.enable();
-
-//     }
-// });
-
-
-
-// map.getCanvas().addEventListener('wheel', (e) => {
-
-//     if (!ancre) return; 
-//     console.log('molette détectée');
-//     if (animationEnCours) return;
-//     console.log("pas d'animatione")
-//     e.preventDefault(); 
-//     animationEnCours = true;
-
-//     const deltaZoom = e.deltaY < 0 ? moletteAncre : -moletteAncre;
-//     const zoomCible = map.getZoom() + deltaZoom;
-
-//     if (zoomCible < 0 || zoomCible > 24) return;
-//     const rect = map.getCanvas().getBoundingClientRect();
-//     const mouseX = e.clientX - rect.left;
-//     const mouseY = e.clientY - rect.top;    
-//     const coordonneesSouris = map.unproject([mouseX, mouseY]);
-
-//     showAncre();
-    
-//     console.log("animation start")
-    
-//     map.easeTo({
-//         zoom: zoomCible,
-//         duration: vitesseAnimation*1000, 
-//         around: coordonneesSouris,  
-//         easing: (t) => {
-//                     progressionTemps = t; 
-//                     return t * (2 - t);   
-//                 }   
-//     });
-
-// }, { passive: false });
-
-// map.on('render', () => {
-//     if (animationEnCours && ancreProgress !== "desactiver") {
-//         showAncre(true);
-//     }
-// });
-
-// map.on('moveend', () => {
-//     if (ancre) {
-//         console.log("animation end");
-//         animationEnCours = false;
-//         showAncre(false);
-
-//     }
-// });
-
 

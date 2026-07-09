@@ -123,9 +123,11 @@ hr {
 }
 
 .field {
+    display: flex;
+    flex-direction: column; /* Aligne les lignes du formulaire verticalement */
+    gap: 8px;
     margin-bottom: 15px;
 }
-
 /* Boutons */
 button {
     width: 100%;
@@ -650,11 +652,11 @@ span[id^="valeur"] {
 }
 .lang-switch-container {
     display: flex;
-    justify-content: flex-end; /* Aligne le bouton à droite */
+    justify-content: space-between; /* Pousse le logo à gauche ET le bouton à droite */
+    align-items: center;            /* Aligne verticalement les deux éléments */
     margin-bottom: 15px;
     width: 100%;
 }
-
 button.btn-lang {
     width: auto; /* Évite qu'il prenne 100% de la largeur */
     padding: 6px 12px;
@@ -674,4 +676,117 @@ button.btn-lang:hover {
     background-color: #f0f7f9; /* Rappel du bleu clair IGN */
     border-color: #8fba1d;      /* Devient vert au survol */
     color: #333;
+}
+.btn-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;  /* Ajuste la taille selon tes besoins */
+    height: 32px;
+    transition: opacity 0.2s;
+}
+
+.btn-logo-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Évite que le logo soit déformé */
+}
+
+/* Effet visuel quand on passe la souris dessus */
+.btn-logo-link:hover {
+    opacity: 0.7;
+}
+.field label {
+    display: inline;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+/* --- LE BOUTON POINT D'INTERROGATION --- */
+.tooltip-help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 16px;
+    height: 16px;
+    background-color: #e0e0e0;
+    color: #555;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: help;
+    
+    position: relative;
+    vertical-align: middle;
+}
+
+/* --- LA BULLE D'AIDE (CACHÉE PAR DÉFAUT) --- */
+.tooltip-help::after {
+    position: absolute;
+    bottom: 130%; /* Positionnée juste au-dessus du ? */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: #222;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    line-height: 1.4;
+    
+    white-space: normal; /* Permet le retour à la ligne automatique du texte */
+    width: 240px;        /* Largeur maximale de l'explication */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+    z-index: 9999;
+}
+
+/* Petite flèche sous la bulle */
+.tooltip-help::before {
+    content: "";
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+    z-index: 9999;
+}
+
+/* --- AFFICHAGE AU SURVOL --- */
+.tooltip-help:hover::after,
+.tooltip-help:hover::before {
+    opacity: 1;
+}
+
+/* --- TRADUCTION DE LA BULLE VIA LE BODY --- */
+/* Par défaut ou si la langue est FR, on pioche dans data-fr */
+body:not(.lang-en) .tooltip-help::after {
+    content: attr(data-fr);
+}
+
+/* Si le body a la classe .lang-en (Anglais), on pioche dans data-en */
+body.lang-en .tooltip-help::after {
+    content: attr(data-en);
+}
+.label-container {
+    display: flex;
+    align-items: center; /* Aligne le texte et le bouton verticalement */
+    gap: 6px;            /* Espace de 6px entre le texte du label et le '?' */
+    width: 100%;
+}
+
+/* On s'assure que le label ne prenne pas toute la largeur pour laisser de la place au '?' */
+.label-container label {
+    margin: 0; 
+    display: inline-block;
 }

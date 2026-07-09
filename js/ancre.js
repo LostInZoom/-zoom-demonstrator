@@ -77,17 +77,6 @@ if (containerListeTopo) {
 }
 
 
-const typosHydroIGN = [
-    "TYPO_D_1",
-    "TYPO_D_2",
-    "TYPO_D_3_T",
-    "TYPO_D_4",
-    "TYPO_D_5",
-    "TYPO_D_6",
-    "TYPO_D_7", 
-    "TYPO_D_8", 
-    "TYPO_D_9", 
-    "TYPO_D_10"]
 
 const configCouchesHydro = [
         { id: "river_line_z6", layer: "river_z6_imp1", width: ["interpolate", ["linear"], ["zoom"], 6, 1, 8, 2] },
@@ -128,18 +117,6 @@ if (containerPaul) {
     });
 }
 
-// const containerIGN = window.parent.document.getElementById('hydro-ign-layers-list');
-// if (containerIGN) {
-//     containerIGN.innerHTML = '';
-//     typosHydroIGN.forEach(typo => {
-//         containerIGN.innerHTML += `
-//             <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 3px; font-size: 0.8rem;">
-//                 <input type="checkbox" class="sub-hydroign-checkbox" data-typo-id="${typo}">
-//                 <label style="font-weight: normal; margin-bottom:0; cursor: pointer;">${typo}</label>
-//             </div>
-//         `;
-//     });
-// }
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -151,7 +128,7 @@ const map = new maplibregl.Map({
 
 });
 
-
+window.mapV55 = map;
 
 
 

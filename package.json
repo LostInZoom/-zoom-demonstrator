@@ -1,0 +1,27 @@
+{
+  "name": "zoom-demo",
+  "version": "1.0.0",
+  "source": "server.js",
+  "type": "module",
+  "scripts": {
+    "watch": "parcel watch ./*.html --public-url /zoomdemo --dist-dir dist/zoomdemo",
+    "daemon": "nodemon server.js",
+    "dev": "concurrently --kill-others \"npm run watch\" \"npm run daemon\"",
+    "build": "parcel build ./*.html --public-url /zoomdemo --dist-dir dist/zoomdemo",
+    "deploy": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "express": "^5.2.1",
+    "hammerjs": "^2.0.8",
+    "maplibre-gl": "^5.18.0",
+    "nodemon": "^3.1.11",
+    "parcel": "^2.16.4",
+    "pg": "^8.18.0",
+    "proj4": "^2.20.3",
+    "carte-facile": "^0.9.0"
+  }
+}

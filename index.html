@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoom zoom zoom zoom</title>
 
-    <link href="./maplibre-gl-js/dist/maplibre-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css">
+    <link href="./maplibre_v6/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
     <div id="sidebar">
         <div class="lang-switch-container">
+            <a href="https://lostinzoom.github.io/home/" target="_blank" rel="noopener noreferrer" class="btn-logo-link" title="LostInZoom">
+                <img src="./assets/liz.webp" alt="Logo">
+            </a>
+            
             <button id="btn-lang" class="btn-lang">🇬🇧 EN</button>
         </div>
 
@@ -46,19 +50,43 @@
 
         <div id="ui-gravite" class="ui-section hidden">
             <div class="field">
-                <label data-fr="Force de la gravité:" data-en="Gravity Force:">Force de la gravité:</label>
+                <div class="label-container">
+                    <label data-fr="Force de la gravité:" data-en="Gravity Force:">Force de la gravité:</label>
+                        <span class="tooltip-help" 
+                            data-fr="Permet de choisir la force de la gravité (0 = pas de gravité, 1 = gravité maximale). Plus la valeur est élevée, plus le zoom sera influencé par les éléments environnants." 
+                            data-en="Controls the gravity strength (0 = no gravity, 1 = maximum gravity). Higher values increase the influence of surrounding elements on the zoom level.">?</span>
+                </div>
                 <input type="number" id="param-force" value="0.15" min="0" max="1">
-                
-                <label data-fr="seuil population ville" data-en="city population threshold">seuil population ville</label>
+                <div class="label-container">
+                    <label data-fr="seuil population ville" data-en="city population threshold">seuil population ville</label>
+                        <span class="tooltip-help" 
+                            data-fr="Les villes dont la population est inférieure à ce seuil ne seront pas prises en compte dans le calcul de la gravité." 
+                            data-en="Cities with a population below this threshold will not be considered in the gravity calculation.">?</span>
+                </div>    
                 <input type="number" id="param-population" value="0" min="0">
-                
-                <label data-fr="poids des capitales" data-en="capitals weight">poids des capitales</label>
+                <div class="label-container">
+
+                    <label data-fr="poids des capitales" data-en="capitals weight">poids des capitales</label>
+                    <span class="tooltip-help" 
+                            data-fr="Permet de choisir le poids des capitales dans le calcul de la gravité." 
+                            data-en="Controls the weight of capitals in the gravity calculation.">?</span>
+                </div>    
+
                 <input type="number" id="param-poids-capitales" value="1.5" min="0" step="0.1">
                 
-                <label data-fr="poids des communes" data-en="municipalities weight">poids des communes</label>
+                <div class="label-container">
+                    <label data-fr="poids des communes" data-en="municipalities weight">poids des communes</label>
+                    <span class="tooltip-help" 
+                            data-fr="Permet de choisir le poids des communes dans le calcul de la gravité." 
+                            data-en="Controls the weight of municipalities in the gravity calculation.">?</span>
+                </div>
                 <input type="number" id="param-poids-communes" value="1" min="0" step="0.1">
-                
-                <label data-fr="Seuil de déclenchement de la gravité (pour v2)" data-en="Gravity activation threshold (for v2)">Seuil de déclenchement de la gravité (pour v2)</label>
+                <div class="label-container">
+                    <label data-fr="Seuil de déclenchement de la gravité (pour v2)" data-en="Gravity activation threshold (for v2)">Seuil de déclenchement de la gravité (pour v2)</label>
+                    <span class="tooltip-help" 
+                            data-fr="Le zoom gravitationnel s'activera que lorsque la quantié de zoom atteindra ce seuil." 
+                            data-en="Gravitational zoom will only be activated once the zoom level reaches this threshold.">?</span>
+                </div>
                 <input type="number" id="param-delta-threshold" value="150" min="0" max="500" step="50">
             </div>
 
@@ -74,7 +102,7 @@
         </div>
 
         <div id="ui-ancre" class="ui-section hidden">
-            <p data-fr="Zoom ancre:" data-en="Anchor Zoom:">Zoom ancre:</p>
+
             <div class="field">
                 <label data-fr="opacité" data-en="opacity">opacité</label>
                 <input type="range" id="param-opacite" min="0" max="1" step="0.1" value="0.5">
@@ -97,7 +125,12 @@
                 <span id="valeur-molette-ancre">2.5</span> 
             </div>
             <div class="field radio-group">
-                <label data-fr="Apparition progressif du film" data-en="Progressive overlay appearance">Apparition progressif du film</label>
+                <div class="label-container">
+                    <label data-fr="Apparition progressif du film" data-en="Progressive overlay appearance">Apparition progressif du film</label>
+                    <span class="tooltip-help" 
+                            data-fr="Le film peut apparaitre et disparaitre de manière progressive. " 
+                            data-en="The layer can appear and disappear progressively.">?</span>
+                </div>
                 <div class="radio-option">
                     <input type="radio" id="mode-desactiver" name="ancre-active" value="desactiver" checked>
                     <label for="mode-desactiver" data-fr="désactiver (Par défaut)" data-en="disable (Default)">désactiver (Par défaut)</label>
@@ -107,12 +140,22 @@
                     <label for="mode-activer" data-fr="activer" data-en="enable"> activer</label>
                 </div>
             </div>
-            <div>                
-                <label data-fr="temps d'animation du film (en %)" data-en="overlay animation time (in %)">temps d'animation du film (en %)</label>
+            <div>  
+                <div class="label-container">              
+                    <label data-fr="temps d'animation du film (en %)" data-en="overlay animation time (in %)">temps d'animation du film (en %)</label>
+                    <span class="tooltip-help" 
+                            data-fr="le filtre sera totalement appliqué à partir de x % du temps et commencera à disparaitre à  100-x % du temps" 
+                            data-en="The filter is fully applied at x% of the timeline and starts to disappear at (100 - x)%.">?</span>
+                </div>
                 <input type="range" id="param-animation-film" min="0" max="50" step="1" value="25">
                 <span id="valeur-animation-film">25</span>
             </div>
-
+            <div class="label-container">   
+                <label data-fr="Choix des couches à afficher" data-en="Choose layers to display">Choix des couches à afficher</label>
+                <span class="tooltip-help" 
+                            data-fr="Permet de choisir  différents les couches à afficher et leurs couleurs d'affichage dans le film. Il est aussi possible de choisir les niveaux de zooms d'affichage. Et enfn pour les toponymes et les hydros, on choisir plusieurs catégories." 
+                            data-en="Allows you to select which layers to display and customize their colors in the film. You can also set the zoom levels for display. Finally, multiple categories can be selected for toponyms and hydrography.">?</span>
+            </div>
             <div id="choix-types-routes" style="margin-top: 15px;">
                 <span class="options-group-title" data-fr="Affichage des routes" data-en="Roads Display">Affichage des routes</span>
                 
@@ -236,7 +279,7 @@
         <iframe id="map2" src="map_60.html" class="hidden"></iframe>    
     </div>
 
-    <script type="module" src="lang.js"></script>
-    <script type="module" src="map.js"></script>
+    <script type="module" src="js/lang.js"></script>
+    <script type="module" src="js/map.js"></script>
 </body>
 </html>
