@@ -85,6 +85,7 @@ const btnReset = document.getElementById('btn-reset');
 const divMap1 = document.getElementById('map1');
 const divMap2 = document.getElementById('map2');
 
+let parametresModifies = false;
 let etatbtnCenter = false;
 
 menuSelect.addEventListener('change', (e) => {
@@ -132,16 +133,31 @@ function paramZoom(s_w,s_p) {
 }
 
 btnParams.addEventListener('click', () => {
+
+    if (btnParams.classList.contains('needs-update')) {
+        btnParams.classList.remove('needs-update');
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnParams.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
+
+        const sensibilite_m = parseFloat(inputMolette.value);
+        const sensibilite_p = parseFloat(inputPad.value);
+        paramZoom( sensibilite_m,sensibilite_p);
+        
+
+        return; 
+    }
     if (btnParams.classList.contains('off')) {
 
         const sensibilite_m = parseFloat(inputMolette.value);
         const sensibilite_p = parseFloat(inputPad.value);
         paramZoom( sensibilite_m,sensibilite_p);
-        btnParams.textContent = 'Activé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnParams.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnParams.classList.replace('off', 'on');
 
     } else {
-        btnParams.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnParams.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnParams.classList.replace('on', 'off');
         map.scrollZoom.setWheelZoomRate(1/450);
         map.scrollZoom.setZoomRate(1/450);
@@ -188,7 +204,6 @@ inputAnimationFilm.addEventListener('input', (e) => {
 let cities = [];
 
 
-
 fetch('https://lostinzoom.huma-num.fr/vtiles/style/villes.json')
   .then(response => {
     if (!response.ok) {
@@ -206,15 +221,67 @@ fetch('https://lostinzoom.huma-num.fr/vtiles/style/villes.json')
     console.error( error);
   });
 
+
+function majbouton(btn) {
+    if (btn && btn.classList.contains('on')) {
+        parametresModifies = true;
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        const texteMaj = btn.getAttribute(`data-${langueActuelle}-maj`);
+        if (texteMaj) {
+            btn.textContent = texteMaj;
+        }
+
+        btn.classList.add('needs-update'); 
+    }
+}
+const sections = ['#ui-gravite', '#ui-ancre', '#ui-sequentiel', '#ui-params'];
+sections.forEach(selector => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    const boutonsDeLaSection = container.querySelectorAll('button');
+    const inputsDeLaSection = container.querySelectorAll('input');
+
+    inputsDeLaSection.forEach(input => {
+        input.addEventListener('input', () => {
+            boutonsDeLaSection.forEach(btn => {
+                if (btn.classList.contains('on')) {
+                    majbouton(btn); 
+                }
+            });
+        });
+    });
+});
 // ############################################################  GRAVITE 
 
 let isGravEnabled = false;
 let isGravEnabled2 = false;
 btnGravite2.addEventListener('click', () => {
+    if (btnGravite2.classList.contains('needs-update')) {
+        btnGravite2.classList.remove('needs-update');
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite2.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
+
+        map.scrollZoom.enable({
+            around: 'gravite',
+            gravityConfig: {
+                type_ville: { capitale: parseFloat(inputPoidsCapitales.value), 
+                                commune: parseFloat(inputPoidsCommunes.value) },
+                seuilPop: parseFloat(inputPopulation.value),
+                attractionPower: parseFloat(inputGravite.value)
+            }
+        });
+        
+
+        return; 
+    }
     if (btnGravite2.classList.contains('off')) {
-        btnGravite2.textContent = 'Activé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite2.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnGravite2.classList.replace('off', 'on');
         console.log('test')
+        btnGravite3.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
+        btnGravite3.classList.replace('on', 'off');
         isGravEnabled2 = true;
         isGravEnabled3 = false;
 
@@ -230,7 +297,8 @@ btnGravite2.addEventListener('click', () => {
         });
 
     } else {
-        btnGravite2.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite2.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnGravite2.classList.replace('on', 'off');
         isGravEnabled2 = false;
         map.scrollZoom.disable();
@@ -241,13 +309,34 @@ btnGravite2.addEventListener('click', () => {
 
 let isGravEnabled3 = false;
 btnGravite3.addEventListener('click', () => {
+    if (btnGravite3.classList.contains('needs-update')) {
+        btnGravite3.classList.remove('needs-update');
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite3.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
+
+        map.scrollZoom.enable({
+            around: 'gravite',
+            gravityConfig: {
+                type_ville: { capitale: parseFloat(inputPoidsCapitales.value), 
+                                commune: parseFloat(inputPoidsCommunes.value) },
+                seuilPop: parseFloat(inputPopulation.value),
+                attractionPower: parseFloat(inputGravite.value),
+                deltaThreshold: parseFloat(inputDeltaThreshold.value)
+            }
+        });
+        
+
+        return; 
+    }
     if (btnGravite3.classList.contains('off')) {
-        btnGravite3.textContent = 'Activé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite3.textContent =  langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnGravite3.classList.replace('off', 'on');
         isGravEnabled3 = true;
         isGravEnabled2 =  false;
-
-                map.scrollZoom.enable({
+        btnGravite2.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
+        btnGravite2.classList.replace('on', 'off');
+        map.scrollZoom.enable({
             around: 'gravite',
             gravityConfig: {
                 type_ville: { capitale: parseFloat(inputPoidsCapitales.value), 
@@ -259,7 +348,8 @@ btnGravite3.addEventListener('click', () => {
         });
 
     } else {
-        btnGravite3.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnGravite3.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnGravite3.classList.replace('on', 'off');
         isGravEnabled3 = false;
     }
@@ -275,9 +365,10 @@ btnGravite3.addEventListener('click', () => {
 
 
 btnCenter.addEventListener('click', () => {
-    if (btnCenter.classList.contains('off')) {
 
-        btnCenter.textContent = 'Activé';
+    if (btnCenter.classList.contains('off')) {
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnCenter.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnCenter.classList.replace('off', 'on');
         console.log('Zoom centré activé');
 
@@ -287,7 +378,8 @@ btnCenter.addEventListener('click', () => {
         etatbtnCenter = true;
 
     } else {
-        btnCenter.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnCenter.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnCenter.classList.replace('on', 'off');
         etatbtnCenter= false;
         map.scrollZoom.disable();
@@ -295,6 +387,7 @@ btnCenter.addEventListener('click', () => {
 
     }
 });
+
 
 
 // ############################################################  sequentiel 
@@ -311,9 +404,23 @@ let index;
 
 
 btnSequentiel.addEventListener('click', () => {
+    if (btnSequentiel.classList.contains('needs-update')) {
+        btnSequentiel.classList.remove('needs-update');
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnSequentiel.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
+
+        intervals = genererIntervalles(inputPallier.value);
+        console.log(intervals);
+        findIndexZoom();
+        changementIntervalles(index);
+        
+
+        return; 
+    }
     if (btnSequentiel.classList.contains('off')) {
         comportement =document.querySelector('input[name="comportement-palier"]:checked').value;
-        btnSequentiel.textContent = 'Activé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnSequentiel.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnSequentiel.classList.replace('off', 'on');
         etatbtnSequentiel = true;
         intervals = genererIntervalles(inputPallier.value);
@@ -321,13 +428,17 @@ btnSequentiel.addEventListener('click', () => {
         findIndexZoom();
         changementIntervalles(index);
     } else {
-        btnSequentiel.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnSequentiel.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnSequentiel.classList.replace('on', 'off');
         etatbtnSequentiel = false;
         map.setMinZoom(0);
         map.setMaxZoom(24);
     }
 });
+
+
+
 
 
 
@@ -490,19 +601,20 @@ function reset(){
     uiCenter.classList.add('hidden');
     uiAncre.classList.add('hidden');
     uiSequentiel.classList.add('hidden');
-
-    btnGravite2.textContent = 'Désactivé';
+    let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+    btnGravite2.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
     btnGravite2.classList.replace('on', 'off');
-    btnGravite3.textContent = 'Désactivé';
+    btnGravite3.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
     btnGravite3.classList.replace('on', 'off');
 
-    btnCenter.textContent = 'Désactivé';
+    btnCenter.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
     btnCenter.classList.replace('on', 'off');
-    btnAncre.textContent = 'Désactivé';
+    btnAncre.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
     btnAncre.classList.replace('on', 'off');    
-    btnSequentiel.textContent = 'Désactivé';
+    btnSequentiel.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
     btnSequentiel.classList.replace('on', 'off'); 
-
+    btnParams.textContent = langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
+    btnParams.classList.replace('on', 'off'); 
 
     etatbtnCenter = false;
     isGravEnabled2 = false;

@@ -486,13 +486,21 @@ button {
 }
 
 .on {
-    background-color: #8fba1d; /* Reste vert quand activé */
+    background-color: #8fba1d; 
     color: white;
 }
 .on:hover {
     background-color: #8fba1d;
 }
+.needs-update {
+    background-color: #ff9800 !important; 
+    color: white !important;
+    border: 1px solid #e68a00 !important;
+}
 
+.needs-update:hover {
+    background-color: #e68a00 !important; 
+}
 /* Footer de la sidebar */
 .footer-sidebar {
     margin-top: auto;

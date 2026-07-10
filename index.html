@@ -25,7 +25,7 @@
         <select id="menu-select">
             <option value="none" data-fr="-- Choisir --" data-en="-- Choose --">-- Choisir --</option>
             <option value="mode-params" data-fr="Zoom paramétrage" data-en="Settings Zoom">Zoom paramétrage</option>
-            <option value="mode-gravite" data-fr="Zoom gravitationnaire" data-en="Gravity Zoom">zoom gravitationnaire</option>
+            <option value="mode-gravite" data-fr="Zoom gravitationnel" data-en="Gravity Zoom">zoom gravitationnaire</option>
             <option value="mode-center" data-fr="Verrouillage du zoom au centre" data-en="Center Lock Zoom">Verrouillage du zoom au centre</option>
             <option value="mode-ancre" data-fr="Zoom ancre" data-en="Anchor Zoom">Zoom ancre</option>
             <option value="mode-sequentiel" data-fr="Zoom séquentiel" data-en="Sequential Zoom">Zoom séquentiel</option>
@@ -45,7 +45,7 @@
                 <input type="range" id="param-pad" min="0.0001" max="0.3" step="0.0001" value="0.0022">
                 <span id="valeur-pad">0.0022</span> 
             </div>
-            <button id="btn-activate-params" class="btn-params off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-activate-params" class="btn-params off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
         </div>
 
         <div id="ui-gravite" class="ui-section hidden">
@@ -91,14 +91,14 @@
             </div>
 
             <p data-fr="Zoom gravitationnel v1:" data-en="Gravity zoom v1:">Zoom gravitationnel v1:</p>
-            <button id="btn-gravite2" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-gravite2" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
             <p data-fr="Zoom gravitationnel v2:" data-en="Gravity zoom v2:">Zoom gravitationnel v2:</p>
-            <button id="btn-gravite3" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-gravite3" class="btn-gravite off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
         </div>
 
         <div id="ui-center" class="ui-section hidden">
            <p data-fr="Verrouillage du zoom au centre:" data-en="Center lock zoom:">Verrouillage du zoom au centre:</p>
-            <button id="btn-center" class="btn-center off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-center" class="btn-center off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
         </div>
 
         <div id="ui-ancre" class="ui-section hidden">
@@ -126,7 +126,7 @@
             </div>
             <div class="field radio-group">
                 <div class="label-container">
-                    <label data-fr="Apparition progressif du film" data-en="Progressive overlay appearance">Apparition progressif du film</label>
+                    <label data-fr="Apparition progressif du film opaque" data-en="Progressive overlay appearance">Apparition progressif du film opaque</label>
                     <span class="tooltip-help" 
                             data-fr="Le film peut apparaitre et disparaitre de manière progressive. " 
                             data-en="The layer can appear and disappear progressively.">?</span>
@@ -142,7 +142,7 @@
             </div>
             <div>  
                 <div class="label-container">              
-                    <label data-fr="temps d'animation du film (en %)" data-en="overlay animation time (in %)">temps d'animation du film (en %)</label>
+                    <label data-fr="temps d'animation du film opaque (en %)" data-en="opaque overlay animation time (in %)">temps d'animation du film opaque     (en %)</label>
                     <span class="tooltip-help" 
                             data-fr="le filtre sera totalement appliqué à partir de x % du temps et commencera à disparaitre à  100-x % du temps" 
                             data-en="The filter is fully applied at x% of the timeline and starts to disappear at (100 - x)%.">?</span>
@@ -241,7 +241,7 @@
                         </div>
                 </details> -->
             </div>
-            <button id="btn-ancre" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-ancre" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
         </div>
 
         <div id="ui-sequentiel" class="ui-section hidden">
@@ -265,7 +265,7 @@
                     <label for="mode-max" data-fr="bloquage en zoomant de 0.01" data-en="lock when zooming in by 0.01">bloquage en zoomant de 0.01</label>
                 </div>
             </div>
-            <button id="btn-sequentiel" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled">Désactivé</button>
+            <button id="btn-sequentiel" class="btn-ancre off" data-fr="Désactivé" data-en="Disabled" data-fr-maj="Mettre à jour" data-en-maj="Update">Désactivé</button>
         </div>
 
         <div class="footer-sidebar">

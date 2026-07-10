@@ -12,6 +12,8 @@ const inputsToponymes = window.parent.document.querySelectorAll('input[name="typ
 const inputsHydro = window.parent.document.querySelectorAll('input[name="type-hydro"]');
 
 
+
+
 let opaciteAncre;
 let blancGris;
 let vitesseAnimation;
@@ -28,6 +30,26 @@ let couchesRoutes = [];
 
 let couchesHydroPaul = [];
 let couchesHydroIGN = []
+
+const menuSelect = document.getElementById('menu-select');
+
+
+
+
+menuSelect.addEventListener('change', (e) => {
+    map.scrollZoom.enable();
+
+});
+
+
+
+
+
+
+
+
+
+
 
 const toponymesACloner = [
         "toponyme localite importance 2 avec point",
@@ -131,7 +153,36 @@ const map = new maplibregl.Map({
 window.mapV55 = map;
 
 
+function majbouton(btn) {
+    if (btn && btn.classList.contains('on')) {
+        parametresModifies = true;
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        const texteMaj = btn.getAttribute(`data-${langueActuelle}-maj`);
+        if (texteMaj) {
+            btn.textContent = texteMaj;
+        }
 
+        btn.classList.add('needs-update'); 
+    }
+}
+const sections = ['#ui-ancre'];
+sections.forEach(selector => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    const boutonsDeLaSection = container.querySelectorAll('button');
+    const inputsDeLaSection = container.querySelectorAll('input');
+
+    inputsDeLaSection.forEach(input => {
+        input.addEventListener('input', () => {
+            boutonsDeLaSection.forEach(btn => {
+                if (btn.classList.contains('on')) {
+                    majbouton(btn); 
+                }
+            });
+        });
+    });
+});
 
 
 map.on('load', () => {
@@ -394,11 +445,28 @@ function showAncre(on = true) {
 }
 
 btnAncre.addEventListener('click', () => {
+    if (btnAncre.classList.contains('needs-update')) {
+        btnAncre.classList.remove('needs-update');
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnAncre.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
+
+        opaciteAncre = parseFloat(inputOpacite.value);
+        blancGris = parseFloat(inputBlancGris.value);
+        vitesseAnimation = parseFloat(inputVitesseAnimation.value);
+        moletteAncre = parseFloat(inputMoletteAncre.value);
+        animationFilmTemps = parseFloat(inputAnimationFilm.value);
+        map.setPaintProperty('film_ancre', 'background-color', `rgb(${blancGris}, ${blancGris}, ${blancGris})`);
+        map.scrollZoom.disable();
+        
+
+        return; 
+    }
     ancre = !ancre;
     ancreProgress =  window.parent.document.querySelector('input[name="ancre-active"]:checked').value;
 
-    if (ancre) {
-        btnAncre.textContent = 'Activé';
+    if (btnAncre.classList.contains('off')) {
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnAncre.textContent = langueActuelle === 'fr' ? 'Activé' : 'Enabled';
         btnAncre.classList.replace('off', 'on');
         opaciteAncre = parseFloat(inputOpacite.value);
         blancGris = parseFloat(inputBlancGris.value);
@@ -410,7 +478,8 @@ btnAncre.addEventListener('click', () => {
 
 
     } else {
-        btnAncre.textContent = 'Désactivé';
+        let langueActuelle = document.body.classList.contains('lang-en') ? 'en' : 'fr';
+        btnAncre.textContent =langueActuelle === 'fr' ? 'Désactivé' : 'Disabled';
         btnAncre.classList.replace('on', 'off');
         map.scrollZoom.enable();
 
